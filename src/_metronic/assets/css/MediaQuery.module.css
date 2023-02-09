@@ -1,0 +1,36 @@
+.section_one , .switchButtom , .switchButtom_PGMd01Lb15{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+ 
+
+.inputgroub_span{
+  position: relative;
+  top: 10px;
+  right: 10px;
+}
+
+ 
+@media only screen and (max-width: 767px) {
+    .direction_column{
+        flex-direction: column;
+    }
+     
+  }
+
+  @media screen and (min-width: 768px)  {
+    .m_inline{
+        margin-inline-end: 20px;
+      }
+
+}
+/* group_1/child_2 */
+.label{
+  font-weight: bold;
+  margin-inline-end: 10px;
+}
+.label_api{
+  border-bottom: 1px dotted #ddd;
+}
