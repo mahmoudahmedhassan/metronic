@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html direction="rtl" dir="rtl" style="direction: rtl" lang="ar">
+<html >
 
 <head>
   <meta charset="utf-8" />
@@ -10,12 +10,28 @@
   <title>Metronic Theme | Keenthemes</title>
   <link rel="shortcut icon" href="%PUBLIC_URL%/media/logos/favicon.ico" />
   <link rel="stylesheet" id="layout-styles-anchor" href="%PUBLIC_URL%/splash-screen.css" />
-</head>
 
-<body id="kt_body" class="page-loading splash-screen mat-typography">
+  <!-- style files -->
+  <link rel="stylesheet" id="layout-styles-style" href="" />
+  <link rel="stylesheet" id="layout-styles-plugins" href="_metronic/assets/sass/plugins.scss" />
+  <link rel="stylesheet" id="layout-styles-react" href="_metronic/assets/sass/style.react.scss" />
+</head>
+<!-- direction="rtl" dir="rtl" style="direction: rtl" lang="ar" -->
+
+<body id="kt_body" class="page-loading splash-screen mat-typography"   >
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <!--begin::Theme mode setup on page load-->
   <script>
+    const lang = JSON.parse(localStorage.getItem('i18nConfig') || '{}');
+    console.log(lang.selectedLang)
+    let body = document.getElementById("kt_body")
+    console.log(body)
+    if(lang.selectedLang==="ar"){
+      body.setAttribute("direction", "rtl");
+      body.setAttribute("dir", "rtl");
+      body.setAttribute("style", "direction");
+      body.setAttribute("lang", "ar");
+    }
     if (document.documentElement) {
       var defaultThemeMode = "system";
 

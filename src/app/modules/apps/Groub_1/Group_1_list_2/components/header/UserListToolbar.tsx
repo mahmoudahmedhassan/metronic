@@ -1,9 +1,10 @@
+import { useIntl } from 'react-intl'
 import {KTSVG} from '../../../../../../../_metronic/helpers'
 import {useListView} from '../../core/ListViewProvider'
 import {UsersListFilter} from './UsersListFilter'
 
 const UsersListToolbar = () => {
-  // const {} = useListView()
+  const intl = useIntl()
 
   const {setItemIdForUpdate,disabledModal} = useListView()
   const openAddUserModal = () => {
@@ -25,7 +26,7 @@ const UsersListToolbar = () => {
           
         >
           <KTSVG path='/media/icons/duotune/arrows/arr075.svg' className='svg-icon-2' />
-          Add
+          {intl.formatMessage({id:'Add'})}
         </button>
       ) : (
         <button

@@ -11,41 +11,51 @@ import {ListOneLastLoginCell} from './LastLoginCell'
 import * as moment from 'moment';
 
 const ListOneColumns: ReadonlyArray<Column<ListOne>> = [
- 
+  // {
+  //   Header: (props) => (
+  //     <ListOneCustomHeader tableProps={props} title='select' className='min-w-60px' />
+  //   ),
+  //   Cell: ({...props}) => <ListOneSelectionCell id={props.data[props.row.index].id} />,
+
+  //  },
   {
     Header: (props) => (
-      <ListOneCustomHeader tableProps={props} title='Sd' className='min-w-60px' />
+      <ListOneCustomHeader tableProps={props}   className='text-end min-w-10px' />
     ),
-    id: 'sd',
-    // Cell: ({...props}) => <ListOneInfoCell ListOne={props.data[props.row.index]} />,
-    accessor: 'sd',
+    id:"id",
+     Cell: ({...props}) => <ListOneSelectionCell id={props.data[props.row.index] }/>,
   },
  
   {
     Header: (props) => (
-      <ListOneCustomHeader tableProps={props} title='T102' className='min-w-60px' />
+      <ListOneCustomHeader tableProps={props} title='T202' className='min-w-60px' />
     ),
-    accessor: 't103',
+    accessor: 't202',
   },
   {
     Header: (props) => (
-      <ListOneCustomHeader tableProps={props} title='T103'className='min-w-60px' />
+      <ListOneCustomHeader tableProps={props} title='T203'className='min-w-100px' />
     ),
-    accessor: 't11',
+    accessor: 't203',
   },
   {
     Header: (props) => (
-      <ListOneCustomHeader tableProps={props} title='T104' className='min-w-60px' />
+      <ListOneCustomHeader tableProps={props} title='T204' className='min-w-60px' />
     ),
-    accessor: 't110',
+    accessor: 't204',
   },
   {
     Header: (props) => (
-      <ListOneCustomHeader tableProps={props} title='T105' className='min-w-60px' />
+      <ListOneCustomHeader tableProps={props} title='T205' className='min-w-60px' />
     ),
-    accessor: 't109',
+    accessor: 't205',
   },
- 
+  {
+    Header: (props) => (
+      <ListOneCustomHeader tableProps={props} title='T206' className='min-w-60px' />
+    ),
+    accessor: 't206',
+  },
  
 ]
 

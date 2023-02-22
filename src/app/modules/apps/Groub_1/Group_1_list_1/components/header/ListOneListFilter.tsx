@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react'
+import { useIntl } from 'react-intl'
 import {MenuComponent} from '../../../../../../../_metronic/assets/ts/components'
 import {initialQueryState, KTSVG} from '../../../../../../../_metronic/helpers'
 import {useQueryRequest} from '../../core/QueryRequestProvider'
@@ -6,6 +7,8 @@ import {useQueryResponse} from '../../core/QueryResponseProvider'
 import SwitchButton from '../../ListOne-edit-modal/SwitchButton'
 
 const ListOneListFilter = () => {
+  const intl = useIntl()
+
   const {updateState, setFetchState,fetchState } = useQueryRequest()
   // console.log(fetchState)
   const {isLoading} = useQueryResponse()
@@ -41,14 +44,14 @@ const ListOneListFilter = () => {
         data-kt-menu-placement='bottom-end'
       >
         <KTSVG path='/media/icons/duotune/general/gen031.svg' className='svg-icon-2' />
-        Filter
+        {intl.formatMessage({id:"Filter"})}
       </button>
       {/* end::Filter Button */}
       {/* begin::SubMenu */}
       <div className='menu menu-sub menu-sub-dropdown w-300px w-md-325px' data-kt-menu='true'>
         {/* begin::Header */}
         <div className='px-7 py-5'>
-          <div className='fs-5 text-dark fw-bolder'>Filter Options</div>
+          <div className='fs-5 text-dark fw-bolder'> {intl.formatMessage({id:"Filter Options"})}</div>
         </div>
         {/* end::Header */}
 
@@ -60,7 +63,7 @@ const ListOneListFilter = () => {
         <div className='px-7 py-5' data-kt-list-one-table-filter='form'>
           {/* begin::Input group */}
           <div className='mb-10'>
-            <label className='form-label fs-6 fw-bold'>Role:</label>
+            <label className='form-label fs-6 fw-bold'>{intl.formatMessage({id:"Role"})}:</label>
             <select
               className='form-select form-select-solid fw-bolder'
               data-kt-select2='true'
@@ -72,18 +75,18 @@ const ListOneListFilter = () => {
               value={fetchState}
             >
               {/* <option value=''></option> */}
-              <option value='pro'>pro</option>
-              <option value='all'>all</option>
-              <option value='hid'>hid</option>
-              <option value='fin'>fin</option>
+              <option value='pro'> {intl.formatMessage({id:"pro"})}</option>
+              <option value='all'> {intl.formatMessage({id:"all"})}</option>
+              <option value='hid'> {intl.formatMessage({id:"hid"})}</option>
+              <option value='fin'> {intl.formatMessage({id:"fin"})}</option>
              </select>
           </div>
           {/* end::Input group */}
           <div>
-            <SwitchButton leble_1=" Default switch" leble_2=" Default switch"/>
-            <SwitchButton leble_1=" Default switch" leble_2=" Default switch"/>
-            <SwitchButton leble_1=" Default switch" leble_2=" Default switch"/>
-            <SwitchButton leble_1=" Default switch" leble_2=" Default switch"/>
+            <SwitchButton leble_1={intl.formatMessage({id:"Default_switch"})} leble_2={intl.formatMessage({id:"Default_switch"})}/>
+            <SwitchButton leble_1={intl.formatMessage({id:"Default_switch"})} leble_2={intl.formatMessage({id:"Default_switch"})}/>
+            <SwitchButton leble_1={intl.formatMessage({id:"Default_switch"})} leble_2={intl.formatMessage({id:"Default_switch"})}/>
+            <SwitchButton leble_1={intl.formatMessage({id:"Default_switch"})} leble_2={intl.formatMessage({id:"Default_switch"})}/>
 
           </div>
 

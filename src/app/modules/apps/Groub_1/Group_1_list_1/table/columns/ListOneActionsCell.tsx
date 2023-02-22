@@ -11,8 +11,8 @@ type Props = {
   id: ID
 }
 
-const ListOneActionsCell:   FC<Props> = ({id}) => {
-  const {setItemIdForUpdate, setOpenOptionOneID,setOpenOptionTwoID,optionsId,setOptionsId} = useListView()
+const ListOneActionsCell:   FC<Props> = ({id,id2}:any) => {
+  const {setItemIdForUpdate, setOpenOptionOneID,setOpenOptionTwoID,setOptionsId} = useListView()
   const {query} = useQueryResponse()
    const queryClient = useQueryClient()
     useEffect(() => {
@@ -25,12 +25,12 @@ const ListOneActionsCell:   FC<Props> = ({id}) => {
   const handleOptionOne = () => {
     setOpenOptionOneID(id)
     // get_PG2MD01({value_1: id, value_2: 'Edit'})
-    setOptionsId({value_1: id, value_2: 'Edit'})
+    setOptionsId({value_1: id, value_2: 'Edit',})
    }
  
   const handleOptionTwo = () => {
     setOpenOptionTwoID(id)
-    setOptionsId({value_1: id, value_2: 'Edit'})
+    setOptionsId({value_1: id, value_2: id2,})
   }
   // const deleteItem = useMutation(() => deleteListOne(id), {
   //   // 💡 response of the mutation is passed to onSuccess
@@ -39,7 +39,7 @@ const ListOneActionsCell:   FC<Props> = ({id}) => {
   //     queryClient.invalidateQueries([`ListOne-${query}`])
   //   },
   // })
-
+ 
   return (
     <>
       <a
@@ -66,16 +66,21 @@ const ListOneActionsCell:   FC<Props> = ({id}) => {
         {/* end::Menu item */}
 
         {/* begin::Menu item */}
-        <div className='menu-item px-3'>
-          <a
-            className='menu-link px-3'
-            data-kt-list-one-table-filter='delete_row'
-            // onClick={async () => await deleteItem.mutateAsync()}
-            onClick={handleOptionTwo}
-          >
-            Option-Two
-          </a>
-        </div>
+        {
+          id2.length > 0 ? (
+            <div className='menu-item px-3'>
+            <a
+              className='menu-link px-3'
+              data-kt-list-one-table-filter='delete_row'
+              // onClick={async () => await deleteItem.mutateAsync()}
+              onClick={handleOptionTwo}
+            >
+              Option-Two
+            </a>
+          </div>
+          ):null
+        }
+      
         {/* end::Menu item */}
       </div>
       {/* end::Menu */}

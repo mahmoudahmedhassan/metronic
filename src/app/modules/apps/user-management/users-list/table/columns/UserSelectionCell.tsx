@@ -7,6 +7,7 @@ type Props = {
 }
 
 const UserSelectionCell: FC<Props> = ({id}) => {
+  console.log(`UserSelectionCell`,id)
   const {selected, onSelect} = useListView()
   const isSelected = useMemo(() => selected.includes(id), [id, selected])
   return (

@@ -10,14 +10,14 @@ import {
 const QueryRequestProvider: FC<WithChildren> = ({children}) => {
   const [state, setState] = useState<QueryState>(initialQueryRequestListOne.state)
   const [fetchState, setFetchState] = useState(initialQueryRequestListOne.fetchState)
-   
+   const [optionTableData,setOptionTableData] = useState(initialQueryRequestListOne.optionTableData)
   const updateState = (updates: Partial<QueryState>) => {
     const updatedState = {...state, ...updates} as QueryState
     setState(updatedState)
   }
  
   return (
-    <QueryRequestContext.Provider value={{state, updateState , fetchState, setFetchState}}>
+    <QueryRequestContext.Provider value={{state, updateState , fetchState, setFetchState,optionTableData,setOptionTableData}}>
       {children}
     </QueryRequestContext.Provider>
   )

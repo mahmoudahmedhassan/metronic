@@ -6,7 +6,6 @@ import {useQueryResponse} from '../../core/QueryResponseProvider'
 
 const ListFilter = () => {
   const {updateState, fetchPG04Sw01,setFetchPG04Sw01} = useQueryRequest()
-  console.log('fetchPG04Sw01',fetchPG04Sw01)
   const {isLoading} = useQueryResponse()
   const [role, setRole] = useState<string | undefined>()
   const [lastLogin, setLastLogin] = useState<string | undefined>()

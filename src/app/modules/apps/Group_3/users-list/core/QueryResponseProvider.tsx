@@ -17,7 +17,6 @@ import {useQueryRequest} from './QueryRequestProvider'
 const QueryResponseContext = createResponseContext<group>(initialQueryResponse)
 const QueryResponseProvider: FC<WithChildren> = ({children}) => {
   const {state,fetchPG04Sw01} = useQueryRequest()
-  console.log(fetchPG04Sw01)
   const [query, setQuery] = useState<string>(stringifyRequestQuery(state))
   const updatedQuery = useMemo(() => stringifyRequestQuery(state), [state])
 

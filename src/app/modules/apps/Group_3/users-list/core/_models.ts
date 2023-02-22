@@ -47,6 +47,7 @@ export const initialgroup: group = {
   t105: '',
 }
 
+
 // modal 
 
 // {
@@ -111,3 +112,24 @@ export const initialModal: modal = {
   t204: 0,
   t205:0,
 }
+
+// PG4Tb02
+export type PG4Tb02 = {
+  [x: string]: any
+  comName?: string
+  comNameTxt?:number
+  id?:string
+  t203?: string | number
+  pG04Lb01a?: number
+  userUpdate?: number
+}
+export type QueryResponsePG4Tb02 = Response<Array<PG4Tb02>>
+export const initialPG4Tb02: PG4Tb02 = {
+    comName: "string",
+    comNameTxt: 0,
+    id: "string",
+    t203: 0,
+    pG04Lb01a: 0,
+    userUpdate: 0
+  }
+

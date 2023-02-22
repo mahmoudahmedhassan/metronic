@@ -9,7 +9,9 @@ import {ListOneSelectionHeader} from './ListOneSelectionHeader'
 import {ListOneSelectionCell} from './ListOneSelectionCell'
 import {ListOneLastLoginCell} from './ListOneLastLoginCell'
 import * as moment from 'moment';
+import { useIntl } from 'react-intl'
 
+ 
 const ListOneColumns: ReadonlyArray<Column<ListOne>> = [
   // {
   //   Header: (props) => <ListOneSelectionHeader tableProps={props} />,
@@ -18,7 +20,7 @@ const ListOneColumns: ReadonlyArray<Column<ListOne>> = [
   // },
   {
     Header: (props) => (
-      <ListOneCustomHeader tableProps={props} title='Sd' className='min-w-60px' />
+      <ListOneCustomHeader tableProps={props} title="Sd" className='min-w-60px' />
     ),
     id: 'sd',
     // Cell: ({...props}) => <ListOneInfoCell ListOne={props.data[props.row.index]} />,
@@ -133,7 +135,7 @@ const ListOneColumns: ReadonlyArray<Column<ListOne>> = [
       <ListOneCustomHeader tableProps={props} title='Actions' className='text-end min-w-100px' />
     ),
     id: 'actions',
-    Cell: ({...props}) => <ListOneActionsCell id={props.data[props.row.index].sd} />,
+    Cell: ({...props}) => <ListOneActionsCell id={props.data[props.row.index].sd} id2={props.data[props.row.index].t102}/>,
   },
 ]
 

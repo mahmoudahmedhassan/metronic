@@ -1,4 +1,4 @@
-import {useMemo} from 'react'
+import {useEffect, useMemo, useState} from 'react'
 import {useTable, ColumnInstance, Row} from 'react-table'
 import {CustomHeaderColumn} from './columns/CustomHeaderColumn'
 import {CustomRow} from './columns/CustomRow'
@@ -10,10 +10,30 @@ import {ListOneListPagination} from '../../components/pagination/ListOneListPagi
 import {KTCardBody} from '../../../../../../../_metronic/helpers'
 // import {search} from '../../../../../../_metronic/helpers/crud-helper/search/search'
 
-const Table = () => {
-  const ListOne = useQueryResponseData()
+const Table = ({tableData}:any) => {
+  const [modifiedData, setModifiedData] = useState<any>(tableData);
+  useEffect(() => {
+    if(tableData.length > 0 ){
+  let newArr = tableData.map((item:any) => {
+      return {
+        tableIndex:item.tableIndex,
+        t201:item.t201,
+        t202:item.t202,
+        t203:item.t203,
+        t204:item.t204,
+        t205:item.t205,
+        t206:item.t206,
+         
+      }
+    });
+       setModifiedData(newArr)
+    }
+       
+  }, [tableData])
+
+  // const ListOne = useQueryResponseData()
   const isLoading = useQueryResponseLoading()
-  const data = useMemo(() => ListOne, [ListOne])
+  const data = useMemo(() => modifiedData, [modifiedData])
   const columns = useMemo(() => ListOneColumns, [])
   const {getTableProps, getTableBodyProps, headers, rows, prepareRow} = useTable({
     columns,

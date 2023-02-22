@@ -1,4 +1,6 @@
+
 {
+  "proxy": "https://tstauth.smartgate-egypt.com/",
   "name": "demo1",
   "version": "8.1.5",
   "private": true,

@@ -60,12 +60,16 @@ export type QueryRequestContextPropsListOne = {
   updateState: (updates: Partial<QueryState>) => void
   fetchState?: any
   setFetchState: Dispatch<SetStateAction<any>>
+  optionTableData:any
+  setOptionTableData:Dispatch<SetStateAction<any>>
 }
 export const initialQueryRequestListOne: QueryRequestContextPropsListOne = {
   state: initialQueryState,
   updateState: updateStateFn,
   fetchState: 0,
   setFetchState: setFetchStateFn,
+  optionTableData:[],
+  setOptionTableData: () => {}
 }
 
 export type QueryResponseContextProps<T> = {

@@ -1,9 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import {useState, useEffect} from 'react'
+import { useIntl } from 'react-intl'
 import {initialQueryState, KTSVG, useDebounce} from '../../../../../../../_metronic/helpers'
  import {useQueryRequest} from '../../core/QueryRequestProvider'
 
 const ListOneListSearchComponent = () => {
+  const intl = useIntl()
+
   const {updateState} = useQueryRequest()
   const [searchTerm, setSearchTerm] = useState<string>('')
    // Debounce search term so that it only gives us latest value ...
@@ -34,7 +37,7 @@ const ListOneListSearchComponent = () => {
           type='text'
           data-kt-list-one-table-filter='search'
           className='form-control form-control-solid w-250px ps-14'
-          placeholder='Search ListOne'
+          placeholder= {intl.formatMessage({id:'Search User'})}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />

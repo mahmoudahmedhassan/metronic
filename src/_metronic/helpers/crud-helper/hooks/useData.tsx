@@ -5,7 +5,7 @@ import { OptionsToPost } from '../../../../app/modules/apps/Groub_1/Group_1_list
 const API_URL_UNSTABLE = process.env.REACT_APP_API_URL_UNSTABLE
 
 const useData = (url: any, values?: any, ) => {
-   
+  console.log(values,"ijij") 
   const {data, isLoading, isError, isSuccess, error} = useQuery('data', async (): Promise<any | undefined> => {
     return axios
      .get(`${API_URL_UNSTABLE}${url}/${values?.value_1}/${values?.value_2}`)

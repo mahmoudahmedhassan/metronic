@@ -3,6 +3,7 @@ import {Navigate, Route, Routes} from 'react-router-dom'
 import ChildOne from "./MainComponents/Grop_1_Child_1"
 import ChildTwo from "./MainComponents/Grop_1_Child_2"
 import {PageLink, PageTitle} from '../../../../_metronic/layout/core'
+import { useIntl } from 'react-intl'
 
 const usersBreadcrumbs: Array<PageLink> = [
   {
@@ -19,6 +20,8 @@ const usersBreadcrumbs: Array<PageLink> = [
   },
 ]
 const Grop1page = () => {
+  const intl = useIntl()
+
   return (
     <Routes>
       <Route>
@@ -27,7 +30,7 @@ const Grop1page = () => {
           path='child_1'
           element={
             <>
-              <PageTitle breadcrumbs={usersBreadcrumbs}>Child_One</PageTitle>
+              <PageTitle breadcrumbs={usersBreadcrumbs}> {intl.formatMessage({id: 'Child_One'})}</PageTitle>
               <ChildOne />
             </>
           }
@@ -36,7 +39,7 @@ const Grop1page = () => {
           path='child_2'
           element={
             <>
-              <PageTitle breadcrumbs={usersBreadcrumbs}>Child_Tow</PageTitle>
+              <PageTitle breadcrumbs={usersBreadcrumbs}>{intl.formatMessage({id: 'Child_Tow'})}</PageTitle>
               <ChildTwo />
             </>
           }

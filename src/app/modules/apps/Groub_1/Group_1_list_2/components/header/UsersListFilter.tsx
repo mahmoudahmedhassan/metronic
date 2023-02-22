@@ -3,8 +3,11 @@ import {MenuComponent} from '../../../../../../../_metronic/assets/ts/components
 import {initialQueryState, KTSVG} from '../../../../../../../_metronic/helpers'
 import {useQueryRequest} from '../../core/QueryRequestProvider'
 import {useQueryResponse} from '../../core/QueryResponseProvider'
+import { useIntl } from 'react-intl'
 
 const UsersListFilter = () => {
+  const intl = useIntl()
+
   const {updateState,setFetchState,fetchState} = useQueryRequest()
   const {isLoading} = useQueryResponse()
   // const [role, setRole] = useState<string | undefined>()
@@ -37,14 +40,14 @@ const UsersListFilter = () => {
         data-kt-menu-placement='bottom-end'
       >
         <KTSVG path='/media/icons/duotune/general/gen031.svg' className='svg-icon-2' />
-        Filter
+        {intl.formatMessage({id:"Filter"})}
       </button>
       {/* end::Filter Button */}
       {/* begin::SubMenu */}
       <div className='menu menu-sub menu-sub-dropdown w-300px w-md-325px' data-kt-menu='true'>
         {/* begin::Header */}
         <div className='px-7 py-5'>
-          <div className='fs-5 text-dark fw-bolder'>Filter Options</div>
+          <div className='fs-5 text-dark fw-bolder'>{intl.formatMessage({id:"Filter Options"})}</div>
         </div>
         {/* end::Header */}
 
@@ -56,7 +59,7 @@ const UsersListFilter = () => {
         <div className='px-7 py-5' data-kt-user-table-filter='form'>
           {/* begin::Input group */}
           <div className='mb-10'>
-            <label className='form-label fs-6 fw-bold'>Role:</label>
+            <label className='form-label fs-6 fw-bold'>{intl.formatMessage({id:"Role"})}:</label>
             <select
               className='form-select form-select-solid fw-bolder'
               data-kt-select2='true'
@@ -68,10 +71,10 @@ const UsersListFilter = () => {
               value={fetchState}
             >
               {/* <option value=''></option> */}
-              <option value='PG05Tp01'>PG05Tp01</option>
-              <option value='PG05Ch01'>PG05Ch01</option>
-              <option value='PG05Ch02'>PG05Ch02</option>
-              <option value='PG05Ch03'>PG05Ch03</option>
+              <option value='PG05Tp01'>{intl.formatMessage({id:"PG05Tp01"})}</option>
+              <option value='PG05Ch01'>{intl.formatMessage({id:"PG05Ch01"})}</option>
+              <option value='PG05Ch02'>{intl.formatMessage({id:"PG05Ch02"})}</option>
+              <option value='PG05Ch03'>{intl.formatMessage({id:"PG05Ch03"})}</option>
              </select>
           </div>
           {/* end::Input group */}

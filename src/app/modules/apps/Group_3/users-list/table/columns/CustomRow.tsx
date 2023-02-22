@@ -13,10 +13,10 @@ type Props = {
 }
 
 const CustomRow: FC<Props> = ({row, onRowSelected, rowID, setSelectedIdRow}) => {
-  const {isDisabledModal,isOpenModal} = useListView()
+  const {isDisabledModal,isOpenModal,} = useListView()
   // 
   const handelRow =()=>{
-   onRowSelected(row.cells[0].row.original.t101)
+   onRowSelected(row.cells[0].row.original.sd)
    setSelectedIdRow(row.cells[0].row.original.sd)
    isDisabledModal(true)
    isOpenModal(true)
@@ -24,7 +24,7 @@ const CustomRow: FC<Props> = ({row, onRowSelected, rowID, setSelectedIdRow}) => 
   return (
     <tr
       {...row.getRowProps()}
-      className={rowID === row.cells[0].row.original.t101 ? `markRow` : null}
+      className={rowID === row.cells[0].row.original.sd ? `markRow` : null}
       onClick={handelRow}
     >
       {row.cells.map((cell) => {

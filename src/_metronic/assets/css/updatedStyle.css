@@ -1,39 +1,42 @@
-@import "style.rtl.css";
+/* @import "style.rtl.css"; */
 .mw-1500px {
   max-width: 1500px !important;
 }
-.markRow{
+
+.markRow {
   background-color: #019df5;
   color: #fff !important;
- }
-  .form-switch.form-check-solid .form-check-input {
-    background-color:#019df5 !important;
-    cursor: pointer;
-  
-  }
-  .form-switch.form-check-solid .form-check-input:checked {
-    background-color: green !important;
-    cursor: pointer;
+  border: 2px solid #fff !important;
+}
 
-  }
-
-  .datePickerWrapper :global(.react-datepicker__input-container input) {
-    padding: 0px 10px;
-    padding-left: 12px;
-
-    background: #2a9d8f;
-    width: 100%;
-    line-height: 1.9rem;
-    border: none;
-    outline: none;
-    border-radius: 15px;
-    padding: 1px 10px;
-    font-size: 16px;
-    font-family: "reg";
-    color: #fff;
-    cursor: pointer;
-    text-align: center;
+.form-switch.form-check-solid .form-check-input {
+  background-color: #019df5 !important;
+  cursor: pointer;
 
 }
-  
 
+.form-switch.form-check-solid .form-check-input:checked {
+  background-color: green !important;
+  cursor: pointer;
+
+}
+
+.datePickerWrapper :global(.react-datepicker__input-container input) {
+  padding: 0px 10px;
+  padding-left: 12px;
+
+  background: #2a9d8f;
+  width: 100%;
+  line-height: 1.9rem;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 1px 10px;
+  font-size: 16px;
+  font-family: "reg";
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+
+}
+ 

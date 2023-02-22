@@ -8,7 +8,7 @@ import { initialgroup, group, modal } from '../core/_models'
 import clsx from 'clsx'
 import { useListView } from '../core/ListViewProvider'
 import { ListLoading } from '../components/loading/ListLoading'
-import { createUser, updateUser } from '../core/_requests'
+import { createUser, PostPG4Tb02, updateUser } from '../core/_requests'
 import { useQueryResponse } from '../core/QueryResponseProvider'
 import { multiplyNumbers } from '../../../../../../_metronic/helpers/helperFn'
 import UseCustomHookElite from '../../../../../../_metronic/helpers/crud-helper/hooks/useCustomHookElite'
@@ -65,7 +65,7 @@ const EditModalForm: FC<Props> = () => {
        </Row>
       )}
 
-      <Col>{data?.length > 0 ? <Table tableData={data && data} setAllChecked={setAllChecked} setApper={setApper}/> : null}</Col>
+      <Col>{data?.length > 0 ? <Table pG04Md01Lb01a={firstObj?.pG04Lb01a} tableData={data && data} setAllChecked={setAllChecked} setApper={setApper}/> : null}</Col>
       <Row>
         <Col><InputFelid placeholder='pG04Tx02a' label='pG04Tx02a' defaultValue={firstObj?.pG04Tx02a} /></Col>
         {

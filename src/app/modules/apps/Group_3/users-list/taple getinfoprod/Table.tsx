@@ -16,8 +16,8 @@ import BootstrapTable from 'react-bootstrap-table-next';
 import cellEditFactory, { Type } from 'react-bootstrap-table2-editor';
 import DataTable from 'react-data-table-component'
 import { TRUE } from 'sass'
-
-
+import { PostPG4Tb02 } from '../core/_requests'
+ 
 let CheckInput = (props:any) => {
   return (
     <input
@@ -32,8 +32,7 @@ let CheckInput = (props:any) => {
 }
 
 let NumberInput = (props:any) => {
-  
-  return (
+   return (
     <div style={{ display: "flex" }}>
       <input
         id={props.id}
@@ -42,16 +41,13 @@ let NumberInput = (props:any) => {
         value={props.value}
         onChange={e => props.onChange(e, props.rowID, props.id)}
         style={{ width: '35px' }} />
-       
-    </div>
+     </div>
   )
 }
-const Table = ({ tableData ,setAllChecked,setApper}: any) => {
-  console.log('tableData', tableData)
-  const [data, setData] = useState(tableData);
-  // const [isAllChecked, setAllChecked] = useState(false);
-
-  useEffect(() => {
+const Table = ({ tableData ,setAllChecked,setApper,pG04Md01Lb01a}: any) => {
+   const [data, setData] = useState(tableData);
+ 
+   useEffect(() => {
     let newArr = tableData.map((item: { tableIndex: any; t201: any; t202: any; t203: any; t204: any; t204tx: any; t205: any; t206: any; t207: any; t207tx: any; t208: any; t209: any; t209tx: any; t210: any; t211: any; t212: any; t212tx: any }) => {
       return {
         id: item.tableIndex,
@@ -76,10 +72,10 @@ const Table = ({ tableData ,setAllChecked,setApper}: any) => {
     setData(newArr)
   }, [tableData]);
 
-  // const listTwo = useQueryResponseData()
-  // const isLoading = useQueryResponseLoading()
-   // const columns = useMemo(() => Columns, []);
-
+  // const listTwo = useQueryResponseData();
+  // const isLoading = useQueryResponseLoading();
+  // const columns = useMemo(() => Columns, []);
+ 
   useEffect(() => {
     let AllChecked = true;
     data.forEach((item: { t212: any }):any => {
@@ -90,11 +86,11 @@ const Table = ({ tableData ,setAllChecked,setApper}: any) => {
     }
   }, [data, setAllChecked])
 
-  const onCheck = (e: { target: { checked: any } }, rowId: any, selector: string) => {
+  const onCheck = async (e: { target: { checked: any } }, rowId: any, selector: string) => {
+     console.log('===>CHECK ', e.target.checked, rowId, selector);
 
-    console.log('===>CHECK ', e.target.checked, rowId, selector)
     let newRow = data.find((row: { id: any }) => row.id === rowId);
-    // console.log("newRow", newRow)
+    console.log("newRow", newRow)
     let nodeIndex = data.findIndex((row: { id: any }) => row.id === rowId)
     newRow[selector] = e.target.checked;
 
@@ -105,32 +101,30 @@ const Table = ({ tableData ,setAllChecked,setApper}: any) => {
           newRow[item] = null;
       }
     }
+
     let newData = [...data]
     newData[nodeIndex] = newRow
     setData([...newData])
-
     let nextIndex = Object.keys(newRow).findIndex(item => item === selector) + 1;
     let nextSelector = Object.keys(newRow)[nextIndex];
-
+    let obj :any={}
     if (typeof newRow[nextSelector] !== "boolean") {
-      // make an api call with new updated value
-      let obj = {
-        id: newRow.id,
-        [nextSelector]: newRow[nextSelector],
-        [selector]: newRow[selector]
-      };
 
-      console.log(obj)
+      // make an api call with new updated value
+        obj.id =newRow.id;
+        obj[nextSelector] = newRow[nextSelector];
+        obj[selector] = newRow[selector]
+
+       console.log("!!!!!",obj)
     } else {
-      // make an api call with new updated value
-      let obj = {
-        id: newRow.id,
-        [selector]: newRow[selector]
-      };
-      console.log(obj)
+      // make an api call with new updated value 
+        obj.id = newRow.id
+        obj[selector] = newRow[selector]
+      console.log("?????", obj)
     }
-  }
 
+     await PostPG4Tb02({id:rowId,t203:selector,pG04Lb01a:pG04Md01Lb01a,userUpdate:0,comNameTxt:obj.t204tx,comName:"ghjgj"})
+  }
 
   const onNumberChange = (e: { target: { value: any } }, rowId: any, selector: string | number) => {
     console.log('N===> ', e.target.value, rowId, selector)
@@ -143,7 +137,7 @@ const Table = ({ tableData ,setAllChecked,setApper}: any) => {
   }
 
   const columns = [
-
+ 
     {
       name: 'T201',
       selector: (row:any) => <span style={{ cursor: "pointer" }}>{row.t201}</span>,
@@ -171,6 +165,7 @@ const Table = ({ tableData ,setAllChecked,setApper}: any) => {
         background:'#bdc3c7',
       }
     },
+
     {
       name: 'T204X',
       selector: (row: { t204tx: any }) => row.t204tx,
@@ -179,8 +174,7 @@ const Table = ({ tableData ,setAllChecked,setApper}: any) => {
         background:'#bdc3c7',
          // background:' -webkit - linear - gradient(to right, #2c3e50, #bdc3c7)',   
         // background:' linear-gradient(to right, #2c3e50, #bdc3c7)' 
-
-      }
+       }
     },
 
     {
@@ -204,7 +198,6 @@ const Table = ({ tableData ,setAllChecked,setApper}: any) => {
       selector: (row: { t207tx: any }) => row.t207tx,
       cell: (row: { id: any; t207tx: any; t207: any }) => <NumberInput rowID={row.id} id={'t207tx'} onChange={onNumberChange} row={row} value={row.t207tx} disabled={row.t207} />,
       style:{background:'#f7b7337d'}
-
     },
     {
       name: 'T208',
@@ -253,8 +246,7 @@ const Table = ({ tableData ,setAllChecked,setApper}: any) => {
     rows: {
       style: {
         minHeight: '30px', // override the row height
-
-      },
+       },
     },
     headCells: {
       style: {

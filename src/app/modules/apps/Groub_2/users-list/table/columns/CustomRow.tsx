@@ -13,7 +13,7 @@ type Props = {
 }
 
 const CustomRow: FC<Props> = ({row, onRowSelected, rowID, setSelectedIdRow}) => {
-  const {isDisabledModal} = useListView()
+  const {isDisabledModal,setItemIdForUpdate} = useListView()
 
   return (
     <tr
@@ -23,6 +23,8 @@ const CustomRow: FC<Props> = ({row, onRowSelected, rowID, setSelectedIdRow}) => 
         onRowSelected(row.cells[0].row.original.t101)
         setSelectedIdRow(row.cells[0].row.original.sd)
         isDisabledModal(true)
+        setItemIdForUpdate(null)
+
       }}
     >
       {row.cells.map((cell) => {

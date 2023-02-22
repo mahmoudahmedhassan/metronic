@@ -11,7 +11,8 @@ const ListOneListHeader = () => {
       {/* begin::Card toolbar */}
       <div className='card-toolbar'>
         {/* begin::Group actions */}
-        {selected.length > 0 ? <ListOneListGrouping /> : <ListOneListToolbar />}
+        {/* {selected.length > 0 ? <ListOneListGrouping /> : <ListOneListToolbar />} */}
+        { <ListOneListToolbar />}
         {/* end::Group actions */}
       </div>
       {/* end::Card toolbar */}

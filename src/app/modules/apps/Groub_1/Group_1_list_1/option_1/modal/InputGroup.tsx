@@ -24,9 +24,11 @@ function InputsGroup(props: propsInputGroup) {
  
   return (
     <div>
-      <InputGroup className='mb-3'>
-        <InputGroup.Text id='basic-addon1'>{props?.label}</InputGroup.Text>
+      <InputGroup size="sm" className='mb-3'>
+        <InputGroup.Text  id="inputGroup-sizing-sm">{props?.label}</InputGroup.Text>
         <Form.Control
+          aria-label="Small"
+          aria-describedby="inputGroup-sizing-sm"
           {...props}
             {...props?.formik?.getFieldProps(props?.name)}
            

@@ -44365,6 +44365,7 @@ code:not([class*=language-]) {
 .table.gy-5 td {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+  text-align: center;
 }
 
 .table.gx-5 th,
