@@ -7,6 +7,7 @@
   background-color: #019df5;
   color: #fff !important;
   border: 2px solid #fff !important;
+
 }
 
 .form-switch.form-check-solid .form-check-input {
@@ -39,4 +40,12 @@
   text-align: center;
 
 }
- 
+.input-group-text{
+  font-size: 10px!important;
+}
+.table.gy-5 th, .table.gy-5 td {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  font-size: 12px !important;
+  text-align: center !important;
+}
