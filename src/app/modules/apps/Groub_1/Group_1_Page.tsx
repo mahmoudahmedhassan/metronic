@@ -39,7 +39,7 @@ const Grop1page = () => {
           path='child_2'
           element={
             <>
-              <PageTitle breadcrumbs={usersBreadcrumbs}>{intl.formatMessage({id: 'Child_Tow'})}</PageTitle>
+              <PageTitle breadcrumbs={usersBreadcrumbs}>{intl.formatMessage({id:'Child_2'})}</PageTitle>
               <ChildTwo />
             </>
           }

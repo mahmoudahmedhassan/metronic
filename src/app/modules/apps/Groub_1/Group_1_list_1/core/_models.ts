@@ -1,8 +1,7 @@
 import { number } from 'yup'
 import {ID, Response} from '../../../../../../_metronic/helpers'
  
- 
-// export type ListOne = {
+ // export type ListOne = {
 //   id?: ID
 //   name?: string
 //   avatar?: string
@@ -50,24 +49,24 @@ export type ListOneToView = {
 export type ListOneViewQueryResponse = Response<Array<ListOneToView>>
  
 export type ListOneToPost ={
-  userID?: ID
+  userID?: number
   PG2Md01Tx1?:string
   PG2Md01Tx2?:string
+  PG2Md01Comb1?:number
   PG2Md01Tx3?:string
-  PG2Md01Comb1?:string
   PG2Md01Tx4?:number
   PG2Md01Tx5?:number
-  PG2Md01Tx6?:string
-  PG2Md01Tx7?:number
+  PG2Md01Tx6?:number
+  PG2Md01Tx7?:string
   PG2Md01Tx8?: number
-  PG2Md01Tx9?: string
+  PG2Md01Tx9?: number
   PG2Md01Tx10?: number
-  PG2Md01Tx11?: number
-  PG2Md01Tx12?:string
+  PG2Md01Tx11?: string
   PG2Md01Tx13?: number
   PG2Md01Tx14?: number
-  PG2Md01Tx15?: string
-  PG2Md01Tx16?: string
+  PG2Md01Tx15?: number
+  PG2Md01Tx16?: number
+  PG2Md01Tx18?:string
   swt01?: boolean
   swt02?: boolean
   swt03?: boolean
@@ -80,20 +79,20 @@ export const initialListOneToPost: ListOneToPost = {
   PG2Md01Tx1: '',
   PG2Md01Tx2: '',
   PG2Md01Tx3: '',
-  PG2Md01Comb1: '',
+  PG2Md01Comb1: 0,
   PG2Md01Tx4: 0,
   PG2Md01Tx5: 0,
-  PG2Md01Tx6: '',
-  PG2Md01Tx7: 0,
+  PG2Md01Tx6: 0,
+  PG2Md01Tx7: "",
   PG2Md01Tx8: 0,
-  PG2Md01Tx9: '',
+  PG2Md01Tx9: 0,
   PG2Md01Tx10: 0,
-  PG2Md01Tx11: 0,
-  PG2Md01Tx12: '',
+  PG2Md01Tx11: '',
   PG2Md01Tx13: 0,
   PG2Md01Tx14: 0,
-  PG2Md01Tx15: '',
-  PG2Md01Tx16: '',
+  PG2Md01Tx15: 0,
+  PG2Md01Tx16: 0,
+  PG2Md01Tx18: "",
   swt01: true,
   swt02: true,
   swt03: true,

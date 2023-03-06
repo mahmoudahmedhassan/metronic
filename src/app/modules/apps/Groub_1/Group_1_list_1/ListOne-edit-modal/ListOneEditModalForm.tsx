@@ -45,7 +45,7 @@ const ListOneEditModalForm: FC<Props> = ({ ListOne, isListOneLoading }) => {
     []
   )
   const [data, setData] = useState<ListOneToPost>(initialListOneToPost)
-  console.log('initialListOneToPost',initialListOneToPost)
+  // console.log('initialListOneToPost',initialListOneToPost)
   const handelClick =async (event:any) => {
     event.preventDefault();
     // rest of the code
@@ -101,8 +101,8 @@ const ListOneEditModalForm: FC<Props> = ({ ListOne, isListOneLoading }) => {
     setData({
       ...data,
       [e.target.name]: e.target.value,
-      userID:"0",
-       PG2Md01Tx10: handleMultiplyNumbers(data.PG2Md01Tx4, data.PG2Md01Tx5),
+      userID:2,
+      PG2Md01Tx10: handleMultiplyNumbers(data.PG2Md01Tx4, data.PG2Md01Tx5),
       //  PG2Md01Tx18: handleMultiplyNumbers(data.PG2Md01Tx8, data.PG2Md01Tx9),
     })
   }
@@ -315,10 +315,10 @@ const ListOneEditModalForm: FC<Props> = ({ ListOne, isListOneLoading }) => {
                     <Col>
                       <InputsGroup
                         type='text'
-                        placeholder={intl.formatMessage({id:"PG2Md01Tx12"})}
-                        label={intl.formatMessage({id:"PG2Md01Tx12"})}
-                        name="PG2Md01Tx12"
-                        value={data.PG2Md01Tx12}
+                        placeholder={intl.formatMessage({id:"PG2Md01Tx13"})}
+                        label={intl.formatMessage({id:"PG2Md01Tx13"})}
+                        name="PG2Md01Tx13"
+                        value={data.PG2Md01Tx13}
                         onChange={handleChange}
                       />
                     </Col>
@@ -329,10 +329,10 @@ const ListOneEditModalForm: FC<Props> = ({ ListOne, isListOneLoading }) => {
                     <Col>
                       <InputsGroup
                         type='number'
-                        placeholder={intl.formatMessage({id:"PG2Md01Tx13"})}
-                        label={intl.formatMessage({id:"PG2Md01Tx13"})}
-                        name="PG2Md01Tx13"
-                        value={data.PG2Md01Tx13}
+                        placeholder={intl.formatMessage({id:"PG2Md01Tx14"})}
+                        label={intl.formatMessage({id:"PG2Md01Tx14"})}
+                        name="PG2Md01Tx14"
+                        value={data.PG2Md01Tx14}
                         x={'+'}
                         onChange={handleChange}
                       />
@@ -341,10 +341,10 @@ const ListOneEditModalForm: FC<Props> = ({ ListOne, isListOneLoading }) => {
                     <Col>
                       <InputsGroup
                         type='number'
-                        placeholder={intl.formatMessage({id:"PG2Md01Tx14"})}
-                        label={intl.formatMessage({id:"PG2Md01Tx14"})}
-                        name="PG2Md01Tx14"
-                        value={data.PG2Md01Tx14}
+                        placeholder={intl.formatMessage({id:"PG2Md01Tx15"})}
+                        label={intl.formatMessage({id:"PG2Md01Tx15"})}
+                        name="PG2Md01Tx15"
+                        value={data.PG2Md01Tx15}
                         onChange={handleChange}
                       />
                     </Col>
@@ -352,10 +352,10 @@ const ListOneEditModalForm: FC<Props> = ({ ListOne, isListOneLoading }) => {
                     <Col>
                       <InputsGroup
                         type='text'
-                        placeholder={intl.formatMessage({id:"PG2Md01Tx15"})}
-                        label={intl.formatMessage({id:"PG2Md01Tx15"})}
-                        name="PG2Md01Tx15"
-                        value={data.PG2Md01Tx15}
+                        placeholder={intl.formatMessage({id:"PG2Md01Tx16"})}
+                        label={intl.formatMessage({id:"PG2Md01Tx16"})}
+                        name="PG2Md01Tx16"
+                        value={data.PG2Md01Tx16}
                         onChange={handleChange}
                       />
                     </Col>
@@ -421,10 +421,10 @@ const ListOneEditModalForm: FC<Props> = ({ ListOne, isListOneLoading }) => {
               <Col lg={9}>
                 <InputsGroup
                   type='text'
-                  placeholder={intl.formatMessage({id:"PG2Md01Tx16"})}
-                  label={intl.formatMessage({id:"PG2Md01Tx16"})}
-                  name='PG2Md01Tx16'
-                  value={data.PG2Md01Tx16}
+                  placeholder={intl.formatMessage({id:"PG2Md01Tx18"})}
+                  label={intl.formatMessage({id:"PG2Md01Tx18"})}
+                  name='PG2Md01Tx18'
+                  value={data.PG2Md01Tx18}
                   onChange={handleChange}
                 />
               </Col>

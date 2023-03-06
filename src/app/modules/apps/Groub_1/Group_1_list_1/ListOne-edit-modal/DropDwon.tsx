@@ -29,17 +29,16 @@ function DropDwon (props: LableProps) {
         onChange={(val) => props?.setData?.({ ...props?.data , [props?.dropData]: val.target.value })}
 
         >
-        <option>Open this select menu</option>
-        <option value='k'>kk</option>
-
-        {/* {
-          data.map((item):any =>{
+        {/* <option>Open this select menu</option>
+        <option value='1'>kk</option> */}
+       {
+          data.map((item: { cid: readonly string[] | React.Key | null | undefined; pG2Md01Comb1: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; }):any =>{
             return (
-             <option key={item.cid} value={item.cid}>{item.pG2Md01Comb1}</option>
-              
+                 <option  value={item.cid != null ? item.cid : ''} >{item.pG2Md01Comb1}</option>
+ 
             )
           })
-        } */}
+        }  
 
       </Form.Select>
     </div>
