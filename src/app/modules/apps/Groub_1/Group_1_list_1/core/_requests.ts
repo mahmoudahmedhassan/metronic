@@ -35,7 +35,7 @@ const postPG2Md01Bu1 = (values: ListOneToPost): Promise<ListOneToPost | undefine
     // .then((response: Response<ListOneToPost>) => response.data)
 
     console.log("values",values)
-    return axios.post(`${POST_PG2MD01BU1}`,{values},{
+    return axios.post(`${POST_PG2MD01BU1}`,values,{
       headers: {
         'Content-Type': 'application/json'
       },

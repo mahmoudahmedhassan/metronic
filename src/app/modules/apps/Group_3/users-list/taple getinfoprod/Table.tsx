@@ -1,21 +1,21 @@
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 // import { useMemo, useState, useEffect, JSXElementConstructor, ReactElement, ReactFragment, ReactPortal, JSXElementConstructor, ReactElement, ReactFragment, ReactPortal, JSXElementConstructor, ReactElement, ReactFragment, ReactPortal } from 'react'
 import { useMemo, useState, useEffect,   } from 'react'
-import { useTable, ColumnInstance, Row } from 'react-table'
-import { CustomHeaderColumn } from './columns/CustomHeaderColumn'
-import { CustomRow } from './columns/CustomRow'
-import { useQueryResponseData, useQueryResponseLoading } from '../core/QueryResponseProvider'
-import { Columns } from './columns/_columns'
-import { modal } from '../core/_models'
+// import { useTable, ColumnInstance, Row } from 'react-table'
+// import { CustomHeaderColumn } from './columns/CustomHeaderColumn'
+// import { CustomRow } from './columns/CustomRow'
+// import { useQueryResponseData, useQueryResponseLoading } from '../core/QueryResponseProvider'
+// import { Columns } from './columns/_columns'
+// import { modal } from '../core/_models'
 // import {UsersListLoading} from '../../components/loading/UsersListLoading'
 // import {UsersListPagination} from '../components/pagination/UsersListPagination'
 import { KTCardBody } from '../../../../../../_metronic/helpers'
-import { useListView } from '../core/ListViewProvider'
-import BootstrapTable from 'react-bootstrap-table-next';
+// import { useListView } from '../core/ListViewProvider'
+// import BootstrapTable from 'react-bootstrap-table-next';
 //@ts-ignore
-import cellEditFactory, { Type } from 'react-bootstrap-table2-editor';
+// import cellEditFactory, { Type } from 'react-bootstrap-table2-editor';
 import DataTable from 'react-data-table-component'
-import { TRUE } from 'sass'
+// import { TRUE } from 'sass'
 import { PostPG4Tb02 } from '../core/_requests'
  
 let CheckInput = (props:any) => {
@@ -143,6 +143,8 @@ const Table = ({ tableData ,setAllChecked,setApper,pG04Md01Lb01a}: any) => {
       selector: (row:any) => <span style={{ cursor: "pointer" }}>{row.t201}</span>,
       style: {
         backgroundColor: '#ffa07aa3',
+        width:'20px'
+
       }
     },
     {
@@ -163,6 +165,7 @@ const Table = ({ tableData ,setAllChecked,setApper,pG04Md01Lb01a}: any) => {
       cell: (row: { id: any; t204: null }):any => <CheckInput rowID={row.id} id={'t204'} onChange={onCheck} check={row.t204} disabled={row.t204 || row.t204 == null} />,
       style: {
         background:'#bdc3c7',
+
       }
     },
 
